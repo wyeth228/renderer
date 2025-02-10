@@ -1,5 +1,5 @@
 /**
- * v0.1.1
+ * v0.1.2
  */
 
 define(["utils/requests", "utils/string"], function (
@@ -82,6 +82,8 @@ define(["utils/requests", "utils/string"], function (
       componentReplaceName,
       appRoot.innerHTML
     );
+
+    router.updatePageLinks();
 
     loadAndInitJSModule("component", componentName);
 
