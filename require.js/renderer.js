@@ -1,5 +1,5 @@
 /**
- * v0.1
+ * v0.1.1
  */
 
 define(["utils/requests", "utils/string"], function (
@@ -98,7 +98,9 @@ define(["utils/requests", "utils/string"], function (
   function generateComponentsTree(htmlContent) {
     var componentMatches = htmlContent.match(config.COMPONENTS_REGEXP);
 
-    for (var componentMatch of componentMatches) {
+    for (var i = 0; i < componentMatches.length; ++i) {
+      var componentMatch = componentMatches[i];
+
       /**
        * extract from string <= component("componentName") => the "componentName" substring
        */
@@ -197,7 +199,9 @@ define(["utils/requests", "utils/string"], function (
 
       router = new Navigo();
 
-      for (var route of routes) {
+      for (var i = 0; i < routes.length; ++i) {
+        var route = routes[i];
+
         router.on(route, function (route) {
           if (route.url === "/" || route.url === "") {
             loadPage(config.MAIN_PAGE_NAME);
