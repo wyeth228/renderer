@@ -1,5 +1,5 @@
 /**
- * v0.1.2
+ * v0.1.3
  */
 
 define(["utils/requests", "utils/string"], function (
@@ -95,7 +95,7 @@ define(["utils/requests", "utils/string"], function (
   /**
    * @param {Array} parent
    * @param {string} htmlContent
-   * @returns undefined
+   * @returns {void}
    */
   function generateComponentsTree(htmlContent) {
     var componentMatches = htmlContent.match(config.COMPONENTS_REGEXP);
